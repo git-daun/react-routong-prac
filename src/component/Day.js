@@ -5,12 +5,13 @@ const Day = () => {
   //data.words 사용
   //console.log(data);
   const params = useParams().id;
-  //console.log(params);
+  //console.log(typeof params);
+  //params가 문자열로 들어오는 상황이므로 숫자로 변환해야함
   const filtered = data.words.filter((word) => word.day === Number(params));
   return (
     <>
       <h2>Day{params}</h2>
-      <table>
+      <table style={{ margin: "auto" }}>
         <tbody>
           {filtered.map((word) => {
             return (
